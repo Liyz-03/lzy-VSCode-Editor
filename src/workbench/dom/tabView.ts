@@ -14,6 +14,7 @@ export class TabView {
 
     constructor() {
         this.tabsBody = this.initTabsBody()
+        this.tabsBodyBindScrollEvent()
     }
 
 
@@ -21,6 +22,36 @@ export class TabView {
         const ul = document.createElement("ul")
         ul.classList.add("filetab_ul")
         return ul
+    }
+
+    private tabsBodyBindScrollEvent() {
+        this.tabsBody.addEventListener("wheel", (e) => {
+            e.preventDefault();
+
+            // 平滑滚动
+            this.tabsBody.scrollBy({
+                left: e.deltaY,
+                behavior: "instant" // 平滑滚动
+            });
+        });
+        // this.tabsBody.addEventListener('scroll', (e) => {
+        //
+        //     const target = e.target as HTMLElement
+        //
+        //     console.log(target);
+        //
+        //     // const scrollLeft = target.scrollLeft
+        //     // const scrollWidth = target.scrollWidth
+        //     // const clientWidth = target.clientWidth
+        //     // const scrollRight = scrollWidth - clientWidth - scrollLeft
+        //     // const right = scrollRight < 10
+        //     // const left = scrollLeft > 0
+        //     // if (right) {
+        //     //     target.scrollLeft = scrollWidth - clientWidth
+        //     // } else if (left) {
+        //     //     target.scrollLeft = 0
+        //     // }
+        // })
     }
 
     getHtmlFromFileList() {
@@ -51,7 +82,6 @@ export class TabView {
         const tabItem = this.createTabItem(path)
         this.tabsBody.appendChild(tabItem)
         this.focus(path)
-
         return tabItem
     }
 
@@ -95,7 +125,13 @@ export class TabView {
 
         if (tabItem) {
             tabItem.classList.add("focus")
+            tabItem.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest",
+                inline: "nearest" // 确保横向滚动到最右
+            });
         }
+
 
     }
 

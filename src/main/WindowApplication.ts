@@ -48,6 +48,7 @@ export class WindowApplicationService implements IWindowApplicationService {
             autoHideMenuBar: true,
             webPreferences: {
                 nodeIntegration: true, //渲染进程可访问Node
+                //修改成自己的本地地址
                 preload: "E:\\code\\front\\lzy-VSCode-Editor\\out\\services\\ContextBridge.js" // 预加载的js脚本 将所需属性注入window
             }
         })
@@ -61,6 +62,7 @@ export class WindowApplicationService implements IWindowApplicationService {
     // 加载窗口资源
     load() {
         if (!this._win) return
+        // 修改成自己的本地地址
         this._win.loadURL('E:/code/front/lzy-VSCode-Editor/workbench-sandbox/workbench.html')
     }
 }

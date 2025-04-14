@@ -1,7 +1,7 @@
 /* ! --------- 打开的文件tab栏样式  */
 
 .filetab_part {
-    height: 25px;
+    height: 28px;
     width: 85%;
     position: fixed;
     top: 35px;
@@ -9,17 +9,30 @@
     background-color: rgba(0, 0, 0, 0.850);
     border-top: solid 3px #ccc;
     border-bottom: .1px solid #747474;
+    overflow: hidden;
 }
 
 .filetab_ul {
+    padding: 0;
     display: flex;
     font-size: 12px;
-    color: azure;
-    padding: 0;
+    color: #64B5F6;
     margin: 0;
     height: 100%;
     background-color: black;
+    overflow: hidden; /* 默认隐藏滚动条 */
+    transition: overflow 0.2s; /* 可选：平滑过渡效果 */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 和 Edge */
 }
+
+/********************鼠标悬停滚动条*******************/
+/* Chrome, Safari, Opera */
+.filetab_ul::-webkit-scrollbar {
+    display: none;
+}
+
+/********************鼠标悬停滚动条*******************/
 
 
 .filetab_ul div {
@@ -60,3 +73,4 @@
     background-color: #3d3d3d;
     border-radius: 2px;
 }
+
