@@ -18,8 +18,12 @@ declare global {
 
 // 给UI沙箱环境注入所需属性
 export function injectPropsInWorkbenchSandbox() {
+
+    console.log(ipcRenderer);
     // 注入IPC Renderer
-    contextBridge.exposeInMainWorld("IPC", ipcRenderer)
+    contextBridge.exposeInMainWorld('IPC', {
+        invoke: (channel: string, data: any) => ipcRenderer.invoke(channel, data)
+    })
     console.log('Inject ipcRenderer SUCCESS');
 }
 

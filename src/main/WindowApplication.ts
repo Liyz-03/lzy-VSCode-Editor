@@ -48,18 +48,20 @@ export class WindowApplicationService implements IWindowApplicationService {
             autoHideMenuBar: true,
             webPreferences: {
                 nodeIntegration: true, //渲染进程可访问Node
-                preload: "E:\\VS_Code\\myVSCode\\out\\common\\ContextBridge.js" // 预加载的js脚本 将所需属性注入window
+                preload: "E:\\code\\front\\lzy-VSCode-Editor\\out\\services\\ContextBridge.js" // 预加载的js脚本 将所需属性注入window
             }
         })
         this._id = this._win.id;
 
         this._win.setMinimumSize(400, 50); // 窗口长宽最小值
+
+        this._win.webContents.openDevTools();
     }
 
     // 加载窗口资源
     load() {
         if (!this._win) return
-        this._win.loadURL('E:/VS_Code/myVSCode/workbench-sandbox/workbench.html')
+        this._win.loadURL('E:/code/front/lzy-VSCode-Editor/workbench-sandbox/workbench.html')
     }
 }
 export interface IWindowApplicationService {

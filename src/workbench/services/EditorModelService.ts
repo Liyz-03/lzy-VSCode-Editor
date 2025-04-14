@@ -8,7 +8,7 @@
 
 import { createDecorator } from '../../common/IOC/decorator'
 import { registerSingleton } from '../../common/IOC/serviceCollection'
-import { ICacheFileService } from './CacheFileService'
+import { ICacheFileService } from './cacheFileService'
 import { IEditorPart } from '../parts/Editor'
 import { IIPCRendererService } from './IPCRendererService'
 import type { editor as monaco } from 'monaco-editor'

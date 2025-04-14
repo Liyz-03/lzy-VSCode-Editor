@@ -9,7 +9,7 @@
       "./src/*.js"
     ],
     "targets": [
-      "node18-win-x64"
+      "node22-win-x64"
     ],
     "options": [
       "experimental-modules"
@@ -28,7 +28,7 @@
   "dependencies": {
     "monaco-editor": "^0.41.0",
     "monaco-languageclient": "^6.4.6",
-    "node-pty": "^1.0.0",
+    "node-pty": "^1.1.0-beta33",
     "ts-loader": "^9.4.4",
     "xterm": "^5.2.1",
     "xterm-addon-attach": "^0.8.0",
@@ -42,8 +42,8 @@
     "@electron-forge/maker-zip": "^6.0.5",
     "@types/ws": "^8.5.5",
     "css-loader": "^6.8.1",
-    "electron": "^23.0.0",
-    "mini-css-extract-plugin": "^2.7.6",
+    "electron": "34.2.0",
+    "mini-css-extract-plugin": "^2.9.2",
     "style-loader": "^3.3.3",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
