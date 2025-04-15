@@ -41,7 +41,6 @@ class CodeMain {
 
         // 打开第一个窗口
         this.openFirstWindow(instantiationService)
-
     }
 
     //初始创建并保存第一批服务

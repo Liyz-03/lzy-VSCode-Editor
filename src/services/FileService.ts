@@ -42,10 +42,6 @@ export class FileService {
 
     // 打开对话框 获取文件夹内文件树 渲染进程无法获取系统数据  故在主进程中获取
     public async getFileTreeFromDir(): Promise<FileTreeNode | undefined> {
-        // console.log(dialog.showOpenDialog({ properties: ['openFile'] }))
-
-
-
         const result = await this.mydialog.showOpenDialog({ properties: ['openDirectory'] })
         return !result.canceled
             ? this.parseFileTree(result.filePaths[0])

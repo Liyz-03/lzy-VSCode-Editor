@@ -34,24 +34,6 @@ export class TabView {
                 behavior: "instant" // 平滑滚动
             });
         });
-        // this.tabsBody.addEventListener('scroll', (e) => {
-        //
-        //     const target = e.target as HTMLElement
-        //
-        //     console.log(target);
-        //
-        //     // const scrollLeft = target.scrollLeft
-        //     // const scrollWidth = target.scrollWidth
-        //     // const clientWidth = target.clientWidth
-        //     // const scrollRight = scrollWidth - clientWidth - scrollLeft
-        //     // const right = scrollRight < 10
-        //     // const left = scrollLeft > 0
-        //     // if (right) {
-        //     //     target.scrollLeft = scrollWidth - clientWidth
-        //     // } else if (left) {
-        //     //     target.scrollLeft = 0
-        //     // }
-        // })
     }
 
     getHtmlFromFileList() {

@@ -61,8 +61,6 @@ export class InstantiationService {
             // 注意这里的构建顺序是反的  需要unshift 否则参数顺序会反
             serviceArgs.unshift(service)
         }
-        console.log('-------------',ctor)
-        console.error(serviceArgs)
         // 真实创建实例
         return new ctor(...[...staticArgs, ...serviceArgs])
     }
